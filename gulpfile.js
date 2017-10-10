@@ -77,12 +77,6 @@ gulp.task('production', function(callback){
 });
 
 gulp.task('watch', function() {
-    connect.server({
-       root: 'examples',
-       livereload: true,
-       port: 8003
-     });
-
     gulp.watch(['src/**/*.js', 'src/**/*.jsx', 'src/**/*.less'], ['default']);
     gulp.watch(['examples/**/js/**/*.js', 'examples/**/*.jsx'], ['build-examples']);
     gulp.watch('examples/**/*.less', ['less-examples']);
