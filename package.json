@@ -1,6 +1,6 @@
 {
   "name": "@overlai/react-scrollbar",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "ScrollArea component for react",
   "main": "./dist/scrollArea.js",
   "scripts": {
