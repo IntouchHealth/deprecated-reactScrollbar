@@ -6,6 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/karma start karma.config.js --single-run --browsers PhantomJS"
   },
+  "typings": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/souhe/reactScrollbar.git"
