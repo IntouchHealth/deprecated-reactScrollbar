@@ -6,8 +6,6 @@
 
 /// <reference types="react" />
 
-import * as React from "react"
-
 declare module "@overlai/react-scrollbar" {
   interface ScrollAreaProps extends React.Props<ScrollArea> {
       className?: string,
