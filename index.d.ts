@@ -26,7 +26,8 @@ declare module "@overlai/react-scrollbar" {
       minScrollSize?: number,
       swapWheelAxes?: boolean,
       focusableTabIndex?: number,
-      stopScrollPropagation?: boolean
+      stopScrollPropagation?: boolean,
+      keyboardScrolling?: boolean
   }
 
   class ScrollArea extends React.Component<ScrollAreaProps, {}> {}

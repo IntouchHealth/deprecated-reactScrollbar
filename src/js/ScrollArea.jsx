@@ -272,10 +272,14 @@ export default class ScrollArea extends React.Component {
         this.focusContent();
     }
 
+    keyBoardScrollAllowed(e) {
+        const { tagName } = e.target
+        return tagName.toLowerCase() !== 'input' && tagName.toLowerCase() !== 'textarea' && this.props.keyboardScrolling
+    }
+
     handleKeyDown(e) {
         // only handle if scroll area is in focus
-        const { tagName } = e.target
-        if (tagName.toLowerCase() !== 'input' && tagName.toLowerCase() !== 'textarea') {
+        if (this.keyBoardScrollAllowed(e)) {
             let deltaY = 0;
             let deltaX = 0;
             let lineHeight = this.lineHeightPx ? this.lineHeightPx : 10;
@@ -469,7 +473,8 @@ ScrollArea.propTypes = {
     minScrollSize: React.PropTypes.number,
     swapWheelAxes: React.PropTypes.bool,
     stopScrollPropagation: React.PropTypes.bool,
-    focusableTabIndex: React.PropTypes.number
+    focusableTabIndex: React.PropTypes.number,
+    keyboardScrolling: React.PropTypes.bool
 };
 
 ScrollArea.defaultProps = {
@@ -480,5 +485,6 @@ ScrollArea.defaultProps = {
     swapWheelAxes: false,
     contentWindow: (typeof window === "object") ? window : undefined,
     ownerDocument: (typeof document === "object") ? document : undefined,
-    focusableTabIndex: 1
+    focusableTabIndex: 1,
+    keyboardScrolling: true
 };
